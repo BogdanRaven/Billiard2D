@@ -9,7 +9,7 @@ namespace GameLogic
         [SerializeField] private MainBall _mainBall;
         [SerializeField] private GameObject _startPoint;
 
-        private Ray2D rayDirection;
+        private Ray2D _rayDirection;
 
         [SerializeField] private float radius;
 
@@ -20,9 +20,9 @@ namespace GameLogic
 
         private void FixedUpdate()
         {
-            rayDirection = new Ray2D(_mainBall.transform.position, _startPoint.transform.up);
+            _rayDirection = new Ray2D(_mainBall.transform.position, _startPoint.transform.up);
 
-            _billiardLineRenderer.Draw(_mainBall.transform.position, rayDirection.direction,
+            _billiardLineRenderer.Draw(_mainBall.transform.position, _rayDirection.direction,
                 radius);
         }
     }

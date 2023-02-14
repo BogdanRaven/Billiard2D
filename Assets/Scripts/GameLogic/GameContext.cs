@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using GameData;
@@ -15,6 +14,8 @@ namespace GameLogic
         private List<CueBall> _cueBalls;
         private MainBall _mainBall;
         private BilliardTable _billiardTable;
+
+        public readonly float timeAnimation = 7f;
 
         public void Context(StateMachine stateMachine, List<CueBall> cueBalls, MainBall mainBall,
             BilliardTable billiardTable, ICueBallsObjectPool iCueBallsObjectPool)

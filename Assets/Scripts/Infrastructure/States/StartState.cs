@@ -54,6 +54,7 @@ namespace Infrastructure
 
             _mainBall.StopMovement();
             _mainBall.transform.position = _levelData.startMainBallPosition;
+            _mainBall.EnableBilliardCue(true);
 
             foreach (var cueBallData in _levelData.CueBallsData)
             {

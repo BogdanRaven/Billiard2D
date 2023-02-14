@@ -7,21 +7,19 @@ namespace GameLogic
 {
     public class MotionTransmitter : MonoBehaviour
     {
-        [SerializeField] private float maxAddForce;
+        [SerializeField] private float _maxAddForce;
 
         [SerializeField] private GameContext _gameContext;
         [SerializeField] private Slider _slider;
-        [SerializeField] private GameObject cue;
 
         public void Push()
         {
-            var force = maxAddForce * _slider.value;
+            var force = _maxAddForce * _slider.value;
 
             Push(_gameContext.MainBall.GetRigidBody2D(), _gameContext.MainBall.transform.up, force, (() =>
             {
                 _gameContext.StateMachine.EnterState<StrikeState>();
-                _gameContext.EnterStrikeWaitStateAfterDelay(7f);
-                cue.gameObject.SetActive(false);
+                _gameContext.EnterStrikeWaitStateAfterDelay(_gameContext.timeAnimation);
             }));
         }
 

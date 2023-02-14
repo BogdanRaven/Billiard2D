@@ -34,6 +34,7 @@ namespace Infrastructure
             _gameContext.BilliardTable.SetEnableCells(false);
             _billiardLineRenderer.SetEnableLines(true);
             _gameContext.MainBall.GetCollider2D().enabled = false;
+            _gameContext.MainBall.EnableBilliardCue(true);
             _gameContext.StopMovementAllBalls();
         }
     }

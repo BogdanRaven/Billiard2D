@@ -4,6 +4,7 @@ namespace GameLogic
 {
     public class MainBall : MonoBehaviour
     {
+        [SerializeField] private GameObject _billiardCue;
         [SerializeField] private Rigidbody2D _rigidBody2D;
         [SerializeField] private Collider2D _collider2D;
 
@@ -23,6 +24,11 @@ namespace GameLogic
             _rigidBody2D.angularVelocity = 0f;
         }
 
+        public void EnableBilliardCue(bool enable)
+        {
+            _billiardCue.gameObject.SetActive(enable);
+        }
+        
         public bool IsMoving()
         {
             return _rigidBody2D.velocity.magnitude > 0;

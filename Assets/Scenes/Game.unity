@@ -869,10 +869,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb92c1d4e14534478aed0c7f49cc191, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAddForce: 2000
+  _maxAddForce: 2000
   _gameContext: {fileID: 1324502074}
   _slider: {fileID: 989058845}
-  cue: {fileID: 2112634771}
 --- !u!1 &734172278
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,9 +900,10 @@ Transform:
   m_LocalPosition: {x: 2.1024, y: -2.240592, z: -0.047277883}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1551407228}
   m_Father: {fileID: 1049979693}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &734172280
 MonoBehaviour:
@@ -1288,7 +1288,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &855325425
 GameObject:
@@ -1302,6 +1302,7 @@ GameObject:
   - component: {fileID: 855325427}
   - component: {fileID: 855325426}
   - component: {fileID: 855325429}
+  - component: {fileID: 855325430}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -1337,6 +1338,7 @@ MonoBehaviour:
   _monoInstallers:
   - {fileID: 855325426}
   - {fileID: 855325429}
+  - {fileID: 855325430}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -1381,6 +1383,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fa6961e7f004608935a2cb540aa989a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &855325430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855325425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d791d677f3df89d45aa9d03e2b663d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerInputController: {fileID: 2055352417}
 --- !u!224 &933831060 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2740986456205968390, guid: ef1dad4f038d39d4795c6c2d982f5afe, type: 3}
@@ -1429,12 +1444,10 @@ Transform:
   - {fileID: 1967156084}
   - {fileID: 1324502073}
   - {fileID: 2055352418}
-  - {fileID: 1485419423}
-  - {fileID: 638714307}
-  - {fileID: 1551407228}
   - {fileID: 734172279}
+  - {fileID: 638714307}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1324502072
 GameObject:
@@ -1636,12 +1649,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1485419421}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.7207093, y: 0.7557795, z: -0.12742446}
+  m_LocalPosition: {x: 7.805652, y: 1.8390765, z: -0.11253272}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1049979693}
-  m_RootOrder: 4
+  m_Father: {fileID: 2055352418}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1485419424
 MonoBehaviour:
@@ -1778,15 +1791,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1551407227}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.1024, y: 2.240592, z: 0.047277883}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1450962040}
   - {fileID: 153540041}
   - {fileID: 208984152}
-  m_Father: {fileID: 1049979693}
-  m_RootOrder: 6
+  m_Father: {fileID: 734172279}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1551407229
 MonoBehaviour:
@@ -1835,6 +1848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0c3e2b75c3416c892e7838b57dfe85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _billiardCue: {fileID: 2112634771}
   _rigidBody2D: {fileID: 1759657745}
   _collider2D: {fileID: 1759657746}
 --- !u!1001 &1790121537
@@ -2003,7 +2017,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelData: {fileID: 11400000, guid: f002512005e55904c87daec000d3a007, type: 2}
-  _playerInputController: {fileID: 2055352417}
   _gameContext: {fileID: 1324502074}
   _mainBall: {fileID: 1759657748}
   _billiardTable: {fileID: 1894878477}
@@ -2022,138 +2035,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1049979693}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2035739335
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2035739337}
-  - component: {fileID: 2035739336}
-  m_Layer: 0
-  m_Name: LineRender
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!120 &2035739336
-LineRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2035739335}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 0
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 2, z: 0}
-  - {x: 0, y: 2, z: 0}
-  m_Parameters:
-    serializedVersion: 3
-    widthMultiplier: 1
-    widthCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.013965607
-        value: 0.08805084
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    colorGradient:
-      serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    numCornerVertices: 0
-    numCapVertices: 0
-    alignment: 0
-    textureMode: 0
-    shadowBias: 0.5
-    generateLightingData: 0
-  m_UseWorldSpace: 1
-  m_Loop: 0
---- !u!4 &2035739337
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2035739335}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.085, y: 0.558, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2055352416
 GameObject:
@@ -2199,7 +2080,8 @@ Transform:
   m_LocalPosition: {x: -0.0849427, y: -1.083297, z: -0.014891747}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1485419423}
   m_Father: {fileID: 1049979693}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
