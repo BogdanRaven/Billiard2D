@@ -22,7 +22,7 @@ namespace GameLogic
         {
             _rayDirection = new Ray2D(_mainBall.transform.position, _startPoint.transform.up);
 
-            _billiardLineRenderer.Draw(_mainBall.transform.position, _rayDirection.direction,
+            _billiardLineRenderer.DrawBilliardRays(_mainBall.transform.position, _rayDirection.direction,
                 radius);
         }
     }

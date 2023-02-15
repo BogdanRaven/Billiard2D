@@ -8,36 +8,41 @@ namespace GameMechanics
         [SerializeField] private LineRenderer _lineTarget;
         [SerializeField] private GameObject _ghostBall;
 
-        private RaycastHit2D hit;
+        private BilliardRayCast _billiardRayCast;
 
-        public void Draw(Vector2 origin, Vector2 direction, float radius)
+        private void Start()
         {
-            hit = Physics2D.CircleCast(origin, radius, direction, Mathf.Infinity);
+            _billiardRayCast = new BilliardRayCast();
+        }
 
-            if (hit)
+        public void DrawBilliardRays(Vector3 origin, Vector3 direction, float radius)
+        {
+            var hit2D = new RaycastHit2D();
+            var cueBallHitPosition = Vector2.zero;
+            var normal = new Ray2D();
+            var ballDirection = new Ray2D();
+            var mainBallDirection = new Ray2D();
+
+            if (_billiardRayCast.BallCast(origin, radius, direction, out hit2D, out cueBallHitPosition, out normal,
+                out ballDirection, out mainBallDirection))
             {
                 _lineMain.SetPosition(0, origin);
-                _lineMain.SetPosition(1, hit.point);
+                _lineMain.SetPosition(1, cueBallHitPosition);
 
-                if (hit.rigidbody == null)
+                if (hit2D.rigidbody == null)
                 {
-                    Ray2D deflected;
-                    RaycastHit2D hit;
+                    _lineTarget.SetPosition(0, cueBallHitPosition);
+                    Vector2 deflected = (Vector2) Vector3.Reflect((hit2D.point - (Vector2)origin).normalized, hit2D.normal);
+                    _lineTarget.SetPosition(1, hit2D.point + deflected);
 
-                    Deflect(new Ray2D(origin, direction), out deflected, out hit);
-
-                    _lineTarget.SetPosition(0, deflected.origin);
-                    _lineTarget.SetPosition(1, deflected.origin + deflected.direction);
-
-                    var ghostBallPosition = hit.point - (direction * radius);
+                    var ghostBallPosition = cueBallHitPosition;
                     _ghostBall.transform.position = new Vector3(ghostBallPosition.x, ghostBallPosition.y);
                 }
                 else
                 {
-                    _lineTarget.SetPosition(0, hit.point);
-                    _lineTarget.SetPosition(1, hit.point - hit.normal);
-                    var ghostBallPosition = hit.point - (direction * radius);
-                    _ghostBall.transform.position = new Vector3(ghostBallPosition.x, ghostBallPosition.y);
+                    _lineTarget.SetPosition(0, ballDirection.origin);
+                    _lineTarget.SetPosition(1, ballDirection.origin + ballDirection.direction);
+                    _ghostBall.transform.position = cueBallHitPosition;
                 }
             }
         }
@@ -47,22 +52,6 @@ namespace GameMechanics
             _lineMain.gameObject.SetActive(enable);
             _lineTarget.gameObject.SetActive(enable);
             _ghostBall.gameObject.SetActive(enable);
-        }
-
-        private bool Deflect(Ray2D ray, out Ray2D deflected, out RaycastHit2D hit)
-        {
-            hit = Physics2D.Raycast(ray.origin, ray.direction);
-            if (hit.collider != null)
-            {
-                Vector2 normal = hit.normal;
-                Vector2 deflect = Vector3.Reflect(ray.direction, normal);
-
-                deflected = new Ray2D(hit.point, deflect);
-                return true;
-            }
-
-            deflected = new Ray2D(Vector2.zero, Vector2.zero);
-            return false;
         }
     }
 }
