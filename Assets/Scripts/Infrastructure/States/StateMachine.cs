@@ -12,7 +12,7 @@ namespace Infrastructure
         private IExitableState Current { get; set; }
 
         public StateMachine(LevelData levelData, ICueBallsObjectPool iCueBallsObjectPool,
-            PlayerInputController playerInputController, MainBall mainBall, BilliardTable billiardTable,
+            IInputController playerInputController, MainBall mainBall, BilliardTable billiardTable,
             BilliardLineRenderer billiardLineRenderer, GameContext gameContext)
         {
             States = new Dictionary<Type, IExitableState>();

@@ -13,6 +13,9 @@ public class LevelTunerEditor : Editor
         if (GUILayout.Button("Tune level data"))
         {
             levelTuner.TryTuneLevelData();
+            EditorUtility.SetDirty(levelTuner.LevelData);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
         }
     }
 }

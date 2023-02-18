@@ -11,7 +11,7 @@ namespace Infrastructure
 
         private ICueBallsObjectPool objectPool;
         private LevelData _levelData;
-        private PlayerInputController _playerInputController;
+        private IInputController _playerInputController;
         private GameContext _gameContext;
 
         private MainBall _mainBall;
@@ -20,7 +20,7 @@ namespace Infrastructure
         private List<CueBall> _cueBalls;
 
         public StartState(StateMachine stateMachine, LevelData levelData, ICueBallsObjectPool iCueBallsObjectPool,
-            PlayerInputController playerInputController, MainBall mainBall, BilliardTable billiardTable,
+            IInputController playerInputController, MainBall mainBall, BilliardTable billiardTable,
             GameContext gameContext)
         {
             _stateMachine = stateMachine;

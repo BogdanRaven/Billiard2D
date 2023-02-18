@@ -12,6 +12,6 @@ public class PlayerInputInstaller : MonoInstaller
 
     private void BindPlayerInputController()
     {
-        Container.Bind<PlayerInputController>().FromInstance(_playerInputController).AsSingle();
+        Container.Bind<IInputController>().FromInstance(_playerInputController).AsSingle();
     }
 }

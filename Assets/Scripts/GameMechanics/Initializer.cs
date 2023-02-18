@@ -18,10 +18,10 @@ namespace GameMechanics
         [SerializeField] private BilliardLineRenderer _billiardLineRenderer;
 
         private ICueBallsObjectPool _iCueBallsObjectPool;
-        private PlayerInputController _playerInputController;
+        private IInputController _playerInputController;
 
         [Inject]
-        private void Context(ICueBallsObjectPool iCueBallsObjectPool, PlayerInputController inputController)
+        private void Context(ICueBallsObjectPool iCueBallsObjectPool, IInputController inputController)
         {
             _iCueBallsObjectPool = iCueBallsObjectPool;
             _playerInputController = inputController;

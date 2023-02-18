@@ -1,4 +1,3 @@
-using System;
 using Infrastructure;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,17 +14,15 @@ namespace GameLogic
         public void Push()
         {
             var force = _maxAddForce * _slider.value;
-
-            Push(_gameContext.MainBall.GetRigidBody2D(), _gameContext.MainBall.transform.up, force, (() =>
-            {
-                _gameContext.StateMachine.EnterState<StrikeState>();
-                _gameContext.EnterStrikeWaitStateAfterDelay(_gameContext.timeAnimation);
-            }));
+            
+            Push(_gameContext.MainBall.GetRigidBody2D(), _gameContext.MainBall.transform.up, force);
+            
+            _gameContext.StateMachine.EnterState<StrikeState>();
+            _gameContext.EnterStrikeWaitStateAfterDelay(_gameContext.timeAnimation);
         }
 
-        public void Push(Rigidbody2D targetObject, Vector2 direction, float force, Action onPush = null)
+        public void Push(Rigidbody2D targetObject, Vector2 direction, float force)
         {
-            onPush?.Invoke();
             targetObject.AddForce(force * direction);
         }
     }

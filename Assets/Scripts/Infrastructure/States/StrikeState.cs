@@ -7,13 +7,13 @@ namespace Infrastructure
     {
         private StateMachine _stateMachine;
 
-        private PlayerInputController _playerInputController;
+        private IInputController _playerInputController;
 
         private BilliardLineRenderer _billiardLineRenderer;
 
         private GameContext _gameContext;
 
-        public StrikeState(StateMachine stateMachine, PlayerInputController playerInputController,
+        public StrikeState(StateMachine stateMachine, IInputController playerInputController,
             BilliardLineRenderer billiardLineRenderer, GameContext gameContext)
         {
             _stateMachine = stateMachine;

@@ -12,35 +12,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026151b547c41424e933e550ecd86eb2, type: 3}
   m_Name: LevelData
   m_EditorClassIdentifier: 
-  startMainBallPosition: {x: -4.06, y: 0}
+  startMainBallPosition: {x: -4, y: 0}
   CueBallsData:
-  - BallType: 1
-    StartPosition: {x: 0.85, y: 0}
-  - BallType: 3
-    StartPosition: {x: 0, y: 0}
-  - BallType: 3
-    StartPosition: {x: 0.45, y: 0.25}
-  - BallType: 3
-    StartPosition: {x: 0.45, y: -0.25}
-  - BallType: 3
-    StartPosition: {x: 0.85, y: 0.5}
-  - BallType: 3
-    StartPosition: {x: 0.85, y: -0.5}
-  - BallType: 3
-    StartPosition: {x: 1.35, y: 0.25}
-  - BallType: 3
-    StartPosition: {x: 1.35, y: -0.25}
-  - BallType: 2
-    StartPosition: {x: 1.35, y: -0.75}
-  - BallType: 2
-    StartPosition: {x: 1.35, y: 0.75}
-  - BallType: 2
-    StartPosition: {x: 1.8, y: 0}
-  - BallType: 2
-    StartPosition: {x: 1.8, y: 0.5}
-  - BallType: 2
-    StartPosition: {x: 1.8, y: -0.5}
-  - BallType: 2
-    StartPosition: {x: 1.8, y: 1}
-  - BallType: 2
-    StartPosition: {x: 1.8, y: -1}
+  - _ballType: 1
+    _startPosition: {x: 0.85, y: 0}
+  - _ballType: 3
+    _startPosition: {x: 0, y: 0}
+  - _ballType: 3
+    _startPosition: {x: 0.45, y: 0.25}
+  - _ballType: 3
+    _startPosition: {x: 0.45, y: -0.25}
+  - _ballType: 3
+    _startPosition: {x: 0.85, y: 0.5}
+  - _ballType: 3
+    _startPosition: {x: 0.85, y: -0.5}
+  - _ballType: 3
+    _startPosition: {x: 1.35, y: 0.25}
+  - _ballType: 3
+    _startPosition: {x: 1.35, y: -0.25}
+  - _ballType: 2
+    _startPosition: {x: 1.35, y: -0.75}
+  - _ballType: 2
+    _startPosition: {x: 1.35, y: 0.75}
+  - _ballType: 2
+    _startPosition: {x: 1.8, y: 0}
+  - _ballType: 2
+    _startPosition: {x: 1.8, y: 0.5}
+  - _ballType: 2
+    _startPosition: {x: 1.8, y: -0.5}
+  - _ballType: 2
+    _startPosition: {x: 1.8, y: 1}
+  - _ballType: 2
+    _startPosition: {x: 1.8, y: -1}
