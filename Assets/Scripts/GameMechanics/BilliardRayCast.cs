@@ -43,21 +43,5 @@ namespace GameMechanics
             mainBallDirection = new Ray2D();
             return false;
         }
-
-        public bool Deflect(Ray2D ray, out Ray2D deflected, out RaycastHit2D hit)
-        {
-            hit = Physics2D.Raycast(ray.origin, ray.direction);
-            if (hit.collider != null)
-            {
-                Vector2 normal = hit.normal;
-                Vector2 deflect = Vector3.Reflect(ray.direction, normal);
-
-                deflected = new Ray2D(hit.point, deflect);
-                return true;
-            }
-
-            deflected = new Ray2D(Vector2.zero, Vector2.zero);
-            return false;
-        }
     }
 }
